@@ -1,0 +1,104 @@
+:root {
+  line-height: 1.5;
+  box-sizing: border-box;
+  background-color: rgb(34, 34, 34);
+  color: white;
+  --content-alloc: 69%;
+}
+
+h1, h2, h3, h4, h5, figure, p, ol, ul {
+  margin: 0;
+}
+
+ol[role="list"], ul[role="list"] {
+  list-style: none;
+  padding-inline: 0;
+}
+
+h1, h2, h3, h4, h5 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+img {
+  display: block;
+  max-inline-size: 100%;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.content {
+    width: var(--content-alloc);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 25px;
+    background-color: rgb(82, 82, 82);
+    height: 100%;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+.entry {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: rgb(53, 53, 53);
+    padding: 10px;
+    padding-bottom: 20px;
+    align-self: center;
+    width: max(100%, 400px); /* not best solution */
+    justify-content: center;
+    padding-left: max(25px, 10%);
+}
+
+.input-row {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+.text-input {
+    display: flex;
+    flex-direction: column;
+}
+
+.slogan, .message {
+    font-size: 20px;
+}
+
+.slogan, .login {
+    width: 85%;
+}
+
+.left {
+    width: calc(100% - var(--content-alloc));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("street-background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+}
+
+.form {
+    width: 100%;
+}
