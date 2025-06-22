@@ -1,9 +1,36 @@
+@font-face {
+    font-family: 'robotoitalic';
+    src: url('fonts/roboto-italic-variablefont_wdthwght-webfont.woff2') format('woff2'),
+         url('fonts/roboto-italic-variablefont_wdthwght-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'robotoregular';
+    src: url('fonts/roboto-variablefont_wdthwght-webfont.woff2') format('woff2'),
+         url('fonts/roboto-variablefont_wdthwght-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'norsebold';
+    src: url('fonts/norse-bold-webfont.woff2') format('woff2'),
+         url('fonts/norse-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 :root {
+  font-family: "robotoregular", serif;
   line-height: 1.5;
   box-sizing: border-box;
-  background-color: rgb(34, 34, 34);
-  color: white;
   --content-alloc: 69%;
+  font-size: 14px;
 }
 
 h1, h2, h3, h4, h5, figure, p, ol, ul {
@@ -46,7 +73,7 @@ html, body {
     justify-content: space-around;
     align-items: center;
     gap: 25px;
-    background-color: rgb(82, 82, 82);
+    background-color: rgb(236, 236, 240);
     height: 100%;
 }
 
@@ -58,7 +85,7 @@ h1 {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    background-color: rgb(53, 53, 53);
+    background-color: rgb(247, 247, 251);
     padding: 10px;
     padding-bottom: 20px;
     align-self: center;
@@ -76,10 +103,13 @@ h1 {
 .text-input {
     display: flex;
     flex-direction: column;
+    width: min(35%, 20rem);
+    height: 19%;
 }
 
 .slogan, .message {
-    font-size: 20px;
+    font-size: 22px;
+    font-weight: bold;
 }
 
 .slogan, .login {
@@ -92,7 +122,7 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url("street-background.png");
+    background-image: url("images/street-background.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -101,4 +131,49 @@ h1 {
 
 .form {
     width: 100%;
+}
+
+.title {
+    color: white;
+    font-family: "norsebold", serif;
+    font-weight: bold;
+    font-size: 7rem;
+}
+
+.by {
+    color: white;
+    font-weight: 400;
+    font-size: 1.2rem;
+    position: absolute;
+    bottom: 1.5rem;
+    width: 10rem;
+    background-color: rgba(0, 0, 0, 40%);
+    text-align: center;
+}
+
+.logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 40%);
+    color: white;
+}
+
+input {
+  font-family: inherit;
+  font-size: 100%;
+  border: 1px solid rgb(208, 208, 208);
+  border-radius: 3px;
+  padding: 0;
+  padding-left: 0.5rem;
+  margin: 0;
+  width: min(16rem, 80%);
+  height: 1.8rem;
+}
+
+input:focus {
+    border: 1px solid rgba(38, 89, 227, 0.651);
+    outline: none;
+    box-shadow: 1px 1px 5px 1px rgba(48, 48, 48, 0.33);
 }
