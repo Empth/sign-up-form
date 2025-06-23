@@ -31,6 +31,12 @@
   box-sizing: border-box;
   --content-alloc: 69%;
   font-size: 14px;
+  --autumn-red: rgb(190, 81, 61);
+  --top-fill-prop: 10%;
+  --bottom-fill-prop: 10%;
+  --form-prop: 40%;
+  --slogan-prop: 20%;
+  --login-prop: calc(100% - var(--form-prop) - var(--slogan-prop) - var(--top-fill-prop) var(--bottom-fill-prop));
 }
 
 h1, h2, h3, h4, h5, figure, p, ol, ul {
@@ -70,9 +76,9 @@ html, body {
     width: var(--content-alloc);
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
-    gap: 25px;
+    gap: 12px;
     background-color: rgb(236, 236, 240);
     height: 100%;
 }
@@ -84,14 +90,15 @@ h1 {
 .entry {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
     background-color: rgb(247, 247, 251);
-    padding: 10px;
-    padding-bottom: 20px;
     align-self: center;
     width: max(100%, 400px); /* not best solution */
     justify-content: center;
+    padding-top: -5%;
     padding-left: max(25px, 10%);
+    box-shadow: 8px 4px 4px 0.5px rgba(48, 48, 48, 0.178);
+    height: 75%;
 }
 
 .input-row {
@@ -104,7 +111,6 @@ h1 {
     display: flex;
     flex-direction: column;
     width: min(35%, 20rem);
-    height: 19%;
 }
 
 .slogan, .message {
@@ -112,8 +118,22 @@ h1 {
     font-weight: bold;
 }
 
-.slogan, .login {
+.login {
     width: 85%;
+}
+
+.slogan {
+    height: var(--slogan-prop);
+    width: 70%;
+    align-self: flex-start;
+    margin-left: 10%;
+}
+
+.slogan-message {
+    align-self: flex-start;
+    padding-left: 3%;
+    width: 60%;
+    height: 60%;
 }
 
 .left {
@@ -131,6 +151,7 @@ h1 {
 
 .form {
     width: 100%;
+    height: var(--form-prop);
 }
 
 .title {
@@ -149,6 +170,8 @@ h1 {
     width: 10rem;
     background-color: rgba(0, 0, 0, 40%);
     text-align: center;
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 40%);
 }
 
 .logo {
@@ -156,8 +179,10 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 40%);
+    background-color: rgba(0, 0, 0, 0.668);
     color: white;
+    height: 16%;
+    gap: min(20px, 20%);
 }
 
 input {
@@ -169,11 +194,72 @@ input {
   padding-left: 0.5rem;
   margin: 0;
   width: min(16rem, 80%);
-  height: 1.8rem;
+  height: 2.0rem;
+}
+
+label {
+    font-size: 100%;
+    font-weight: 700;
+    color:rgb(47, 47, 47);
+}
+
+input:invalid {
+    border: 1px solid rgba(227, 47, 38, 0.651);
+    outline: none;
 }
 
 input:focus {
     border: 1px solid rgba(38, 89, 227, 0.651);
     outline: none;
     box-shadow: 1px 1px 5px 1px rgba(48, 48, 48, 0.33);
+}
+
+button {
+    border: none;
+    width: 180px;
+    height: 45px;
+    background-color: var(--autumn-red);
+    border-radius: 6px;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-left: 10%;
+    margin-top: min(3.5%, 30px);
+    cursor: pointer;
+    box-shadow: 2px 2px 5px 0.2px rgba(77, 77, 77, 0.33);
+}
+
+.login > a {
+    text-decoration: none;
+    color: var(--autumn-red);
+    font-weight: bold;
+}
+
+.top-fill {
+    height: min(var(--top-fill-prop), 1vw);
+    width: 100%;
+}
+
+.bottom-fill {
+    height: var(--bottom-fill-prop);
+    width: 100%;
+}
+
+.register {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.login {
+    margin-left: 10%;
+}
+
+.left-mid-fill {
+    height: 40%;
+}
+
+.logo-img {
+    height: auto;
+    width: 20%
 }
